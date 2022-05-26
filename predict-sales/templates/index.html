@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<!-- Reference: https://github.com/krishnaik06/Deployment-flask -->
+<head>
+<link rel="stylesheet" href="static/style.css">
+<style>
+a{
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+</style>
+</head>
+<html >
+
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Future Sales</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	ENTER SHOPID<input type="text" name="SHOPID" placeholder="shopid" required="required" /></br>
+        ENTER ITEMID<input type="text" name="ITEMID" placeholder="itemid" required="required" /><br>
+		
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br><h4>
+   <a href="static/load_file.html" target="_blank" color="red">Click here for Sample SHOPID and ITEMID</a>
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
